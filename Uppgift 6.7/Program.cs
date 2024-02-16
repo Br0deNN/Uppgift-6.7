@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 class Program
@@ -7,26 +7,27 @@ class Program
     {
         Console.WriteLine("Skriv in ett tal du vill undersöka");
         int x = int.Parse(Console.ReadLine());
-        Primtal(x);
+        Console.WriteLine(Primtal(x));
         
         
     }
-    static int Primtal(int x)
+    static bool Primtal(int x)
     {
+        int delx = 0;
         for (int i = 2; i < x; i++)
         {
             if (x % i == 0)
             {
-                Console.WriteLine("Talet är inte ett primtal");
-                return x;
-            }
-            else
-            {
-                Console.WriteLine("Talet är ett primtal");
-                return x;
+                delx++;
             }
         }
-        return x;
-        
+        if (delx == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
